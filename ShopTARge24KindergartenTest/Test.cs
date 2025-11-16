@@ -3,7 +3,7 @@ using OpenQA.Selenium.Firefox;
 using NUnit.Framework;
 using System.Security.Cryptography.X509Certificates;
 
-namespace ShopTARge24KindergartenTesting
+namespace ShopTARge24KindergartenTest
 {
     public class Test
     {

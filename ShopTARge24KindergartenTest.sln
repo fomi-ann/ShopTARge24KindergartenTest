@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTARge24KindergartenTest", "ShopTARge24KindergartenTest\ShopTARge24KindergartenTest.csproj", "{804D2053-22CA-47E3-A901-F0CB9B006283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopTARge24SpaceshipsTest", "ShopTARge24SpaceshipsTest\ShopTARge24SpaceshipsTest.csproj", "{2B1D691B-939F-4F22-B309-112C783E56F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{804D2053-22CA-47E3-A901-F0CB9B006283}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{804D2053-22CA-47E3-A901-F0CB9B006283}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{804D2053-22CA-47E3-A901-F0CB9B006283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B1D691B-939F-4F22-B309-112C783E56F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1D691B-939F-4F22-B309-112C783E56F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1D691B-939F-4F22-B309-112C783E56F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1D691B-939F-4F22-B309-112C783E56F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
