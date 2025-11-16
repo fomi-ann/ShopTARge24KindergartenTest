@@ -9,15 +9,20 @@ namespace ShopTARge24KindergartenTesting
     {
         private static void Main(string[] args)
         {
-            TestKindergartenCreate();
-            TestKindergartenUpdate();
+            // CRUD & navigation tests
+            TestKindergartenCreateValid();
+            TestKindergartenUpdateValid();
             TestKindergartenDetails();
             TestKindergartenDelete();
 
+            // Back to Index navigation tests
             TestKindergartenBackToIndexCreate();
             TestKindergartenBackToIndexUpdate();
             TestKindergartenBackToIndexDelete();
 
+            // Invalid input tests
+            TestKindergartenCreateInvalid();
+            TestKindergartenUpdateInvalid();
         }
 
         public static IWebDriver TestBase()
@@ -63,7 +68,7 @@ namespace ShopTARge24KindergartenTesting
         }
 
         [Test]
-        public static void TestKindergartenCreate()
+        public static void TestKindergartenCreateValid()
         {
             var driver = TestBase();
 
@@ -110,9 +115,65 @@ namespace ShopTARge24KindergartenTesting
             idOfCreateActionButton.Click();
 
         }
+        [Test]
+        public static void TestKindergartenCreateInvalid()
+        {
+            var driver = TestBase();
+
+            // Invalid Test Data
+            string TD_GroupName = "";
+            string TD_ChildrenCount = "";
+            string TD_KindergartenName = "";
+            string TD_TeacherName = "";
+
+            // Navigate to Index
+            TestNavigateToIndex(driver);
+
+            // Create btn Index view
+            TestNavigateToCreate(driver);
+
+            // Group Name
+            Thread.Sleep(500);
+            IWebElement idOfGroupNameInput = driver.FindElement(By.Id("groupName"));
+            idOfGroupNameInput.Click();
+            idOfGroupNameInput.SendKeys(TD_GroupName);
+
+            // Children Count
+            Thread.Sleep(500);
+            IWebElement idOfChildrenCountInput = driver.FindElement(By.Id("childrenCount"));
+            idOfChildrenCountInput.Clear();
+            idOfChildrenCountInput.Click();
+            idOfChildrenCountInput.SendKeys(TD_ChildrenCount);
+
+            // Kindergarten Name
+            Thread.Sleep(500);
+            IWebElement idOfKindergartenNameInput = driver.FindElement(By.Id("kindergartenName"));
+            idOfKindergartenNameInput.Click();
+            idOfKindergartenNameInput.SendKeys(TD_KindergartenName);
+
+            // Teacher Name
+            Thread.Sleep(500);
+            IWebElement idOfTeacherNameInput = driver.FindElement(By.Id("teacherName"));
+            idOfTeacherNameInput.Click();
+            idOfTeacherNameInput.SendKeys(TD_TeacherName);
+
+            try
+            {
+                //Create btn
+                Thread.Sleep(500);
+                IWebElement idOfCreateActionButton = driver.FindElement(By.Id("createCrtUpd"));
+                idOfCreateActionButton.Click();
+
+                Assert.Fail("The program did not crash, but it should have...");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Yey! Programm crashed due to invalid input! ;)");
+            }
+        }
 
         [Test]
-        public static void TestKindergartenUpdate()
+        public static void TestKindergartenUpdateValid()
         {
             var driver = TestBase();
 
@@ -160,6 +221,67 @@ namespace ShopTARge24KindergartenTesting
             Thread.Sleep(500);
             IWebElement idOfUpdateActionButton = driver.FindElement(By.Id("updateCrtUpd"));
             idOfUpdateActionButton.Click();
+
+        }
+        [Test]
+        public static void TestKindergartenUpdateInvalid()
+        {
+            var driver = TestBase();
+
+            // Invalid Test Data
+            string TD_GroupName = "";
+            string TD_ChildrenCount = "";
+            string TD_KindergartenName = "";
+            string TD_TeacherName = "";
+
+            // Navigate to Index
+            TestNavigateToIndex(driver);
+
+            // Update btn Index view
+            TestNavigateToUpdate(driver);
+
+            // Update Group Name
+            Thread.Sleep(500);
+            IWebElement idOfGroupNameInput = driver.FindElement(By.Id("groupName"));
+            idOfGroupNameInput.Clear();
+            idOfGroupNameInput.Click();
+            idOfGroupNameInput.SendKeys(TD_GroupName);
+
+            // Update Children Count
+            Thread.Sleep(500);
+            IWebElement idOfChildrenCountInput = driver.FindElement(By.Id("childrenCount"));
+            idOfChildrenCountInput.Clear();
+            idOfChildrenCountInput.Click();
+            idOfChildrenCountInput.SendKeys(TD_ChildrenCount);
+
+            // Update Kindergarten Name
+            Thread.Sleep(500);
+            IWebElement idOfKindergartenNameInput = driver.FindElement(By.Id("kindergartenName"));
+            idOfKindergartenNameInput.Clear();
+            idOfKindergartenNameInput.Click();
+            idOfKindergartenNameInput.SendKeys(TD_KindergartenName);
+
+            // Update Teacher Name
+            Thread.Sleep(500);
+            IWebElement idOfTeacherNameInput = driver.FindElement(By.Id("teacherName"));
+            idOfTeacherNameInput.Clear();
+            idOfTeacherNameInput.Click();
+            idOfTeacherNameInput.SendKeys(TD_TeacherName);
+
+            try
+            {
+                // Update btn
+                Thread.Sleep(500);
+                IWebElement idOfUpdateActionButton = driver.FindElement(By.Id("updateCrtUpd"));
+                idOfUpdateActionButton.Click();
+
+                Assert.Fail("The program did not crash, but it should have...");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Yey! Programm crashed due to invalid input! ;)");
+            }
+
 
         }
 
