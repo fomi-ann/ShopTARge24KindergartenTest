@@ -27,28 +27,57 @@ namespace ShopTARge24KindergartenTesting
             return driver;
         }
 
+ 
+        public static void TestNavigateToIndex(IWebDriver driver) {
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+        }
+
+        public static void TestNavigateToCreate(IWebDriver driver)
+        {
+            // Create btn Index view
+            IWebElement idOfCreateButton = driver.FindElement(By.Id("kindergartenCreate"));
+            idOfCreateButton.Click();
+        }
+
+        public static void TestNavigateToUpdate(IWebDriver driver)
+        {
+            // Update btn Index view
+            IWebElement idOfUpdateButton = driver.FindElement(By.Id("kindergartenUpdate"));
+            idOfUpdateButton.Click();
+        }
+
+        public static void TestNavigateToDetails(IWebDriver driver)
+        {
+            // Details btn Index view
+            IWebElement idOfDetailsButton = driver.FindElement(By.Id("kindergartenDetails"));
+            idOfDetailsButton.Click();
+        }
+
+        public static void TestNavigateToDelete(IWebDriver driver)
+        {
+            // Delete btn Index view
+            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenDelete"));
+            idOfDeleteButton.Click();
+        }
+
         [Test]
         public static void TestKindergartenCreate()
         {
             var driver = TestBase();
 
-            //GroupName
-            //ChildrenCount
-            //KindergartenName
-            //TeacherName
-
+            // Valid Test Data
             string TD_GroupName = "Group Name Test";
             string TD_ChildrenCount = "25";
             string TD_KindergartenName = "Kindergarten Name Test";
             string TD_TeacherName = "Teacher Name Test";
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Create btn Index view
-            IWebElement idOfCreateButton = driver.FindElement(By.Id("kindergartenCreate"));
-            idOfCreateButton.Click();
+            TestNavigateToCreate(driver);
 
             // Group Name
             Thread.Sleep(500);
@@ -87,23 +116,17 @@ namespace ShopTARge24KindergartenTesting
         {
             var driver = TestBase();
 
-            //GroupName
-            //ChildrenCount
-            //KindergartenName
-            //TeacherName
-
+            // Valid Test Data
             string TD_GroupName = "Group Name Update Test";
             string TD_ChildrenCount = "33";
             string TD_KindergartenName = "Kindergarten Name Update Test";
             string TD_TeacherName = "Teacher Name Update Test";
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Update btn Index view
-            IWebElement idOfUpdateButton = driver.FindElement(By.Id("kindergartenUpdate"));
-            idOfUpdateButton.Click();
+            TestNavigateToUpdate(driver);
 
             // Update Group Name
             Thread.Sleep(500);
@@ -146,12 +169,10 @@ namespace ShopTARge24KindergartenTesting
             var driver = TestBase();
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Details btn Index view
-            IWebElement idOfDetailsButton = driver.FindElement(By.Id("kindergartenDetails"));
-            idOfDetailsButton.Click();
+            TestNavigateToDetails(driver);
 
             // Back to Index btn
             Thread.Sleep(5000);
@@ -166,12 +187,10 @@ namespace ShopTARge24KindergartenTesting
             var driver = TestBase();
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Delete btn Index view
-            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenDelete"));
-            idOfDeleteButton.Click();
+            TestNavigateToDelete(driver);
 
             // Delete btn Delete view
             Thread.Sleep(5000);
@@ -186,12 +205,10 @@ namespace ShopTARge24KindergartenTesting
             var driver = TestBase();
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Cretae btn Index view
-            IWebElement idOfCreateButton = driver.FindElement(By.Id("kindergartenCreate"));
-            idOfCreateButton.Click();
+            TestNavigateToCreate(driver);
 
             // Back btn CreateUpdate view
             Thread.Sleep(5000);
@@ -206,12 +223,10 @@ namespace ShopTARge24KindergartenTesting
             var driver = TestBase();
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Update btn Index view
-            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenUpdate"));
-            idOfDeleteButton.Click();
+            TestNavigateToUpdate(driver);
 
             // Back btn CreateUpdate view
             Thread.Sleep(5000);
@@ -226,12 +241,10 @@ namespace ShopTARge24KindergartenTesting
             var driver = TestBase();
 
             // Navigate to Index
-            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
-            idOfLinkElement.Click();
+            TestNavigateToIndex(driver);
 
             // Delete btn Index view
-            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenDelete"));
-            idOfDeleteButton.Click();
+            TestNavigateToDelete(driver);
 
             // Back btn Delete view
             Thread.Sleep(5000);
