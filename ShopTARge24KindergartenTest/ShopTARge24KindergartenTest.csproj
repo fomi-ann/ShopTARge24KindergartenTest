@@ -12,11 +12,4 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.38.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Tests\Navigation\" />
-    <Folder Include="Tests\Details\" />
-    <Folder Include="Tests\Detele\" />
-    <Folder Include="Tests\Update\" />
-  </ItemGroup>
-
 </Project>
