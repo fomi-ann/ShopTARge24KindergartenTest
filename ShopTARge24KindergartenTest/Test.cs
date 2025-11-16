@@ -11,6 +11,7 @@ namespace ShopTARge24KindergartenTesting
         {
             TestKindergartenCreate();
             TestKindergartenUpdate();
+            TestKindergartenDetails();
         }
 
         [Test]
@@ -128,6 +129,26 @@ namespace ShopTARge24KindergartenTesting
 
         }
 
+        [Test]
+        public static void TestKindergartenDetails()
+        {
+            IWebDriver driver = new FirefoxDriver();
+            driver.Url = "https://localhost:7053/";
+
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+
+            // Details btn Index view
+            IWebElement idOfDetailsButton = driver.FindElement(By.Id("kindergartenDetails"));
+            idOfDetailsButton.Click();
+
+            // Back to Index btn
+            Thread.Sleep(5000);
+            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndex"));
+            idOfBackButton.Click();
+
+        }
 
     }
 
