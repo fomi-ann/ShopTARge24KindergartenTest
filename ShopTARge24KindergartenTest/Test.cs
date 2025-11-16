@@ -12,6 +12,7 @@ namespace ShopTARge24KindergartenTesting
             TestKindergartenCreate();
             TestKindergartenUpdate();
             TestKindergartenDetails();
+            TestKindergartenDelete();
         }
 
         [Test]
@@ -65,8 +66,8 @@ namespace ShopTARge24KindergartenTesting
 
             //Create btn
             Thread.Sleep(500);
-            IWebElement idOfCreateButtonCU = driver.FindElement(By.Id("createCrtUpd"));
-            idOfCreateButtonCU.Click();
+            IWebElement idOfCreateActionButton = driver.FindElement(By.Id("createCrtUpd"));
+            idOfCreateActionButton.Click();
 
         }
 
@@ -124,8 +125,8 @@ namespace ShopTARge24KindergartenTesting
 
             // Update btn
             Thread.Sleep(500);
-            IWebElement idOfCreateButtonCU = driver.FindElement(By.Id("updateCrtUpd"));
-            idOfCreateButtonCU.Click();
+            IWebElement idOfUpdateActionButton = driver.FindElement(By.Id("updateCrtUpd"));
+            idOfUpdateActionButton.Click();
 
         }
 
@@ -147,6 +148,27 @@ namespace ShopTARge24KindergartenTesting
             Thread.Sleep(5000);
             IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndex"));
             idOfBackButton.Click();
+
+        }
+
+        [Test]
+        public static void TestKindergartenDelete()
+        {
+            IWebDriver driver = new FirefoxDriver();
+            driver.Url = "https://localhost:7053/";
+
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+
+            // Delete btn Index view
+            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenDelete"));
+            idOfDeleteButton.Click();
+
+            // Delete btn Delete view
+            Thread.Sleep(5000);
+            IWebElement idOfDeleteActionButton = driver.FindElement(By.Id("deleteDlt"));
+            idOfDeleteActionButton.Click();
 
         }
 
