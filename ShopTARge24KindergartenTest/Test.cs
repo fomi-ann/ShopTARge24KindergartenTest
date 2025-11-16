@@ -13,13 +13,24 @@ namespace ShopTARge24KindergartenTesting
             TestKindergartenUpdate();
             TestKindergartenDetails();
             TestKindergartenDelete();
+
+            TestKindergartenBackToIndexCreate();
+            TestKindergartenBackToIndexUpdate();
+            TestKindergartenBackToIndexDelete();
+
+        }
+
+        public static IWebDriver TestBase()
+        {
+            IWebDriver driver = new FirefoxDriver();
+            driver.Url = "https://localhost:7053/";
+            return driver;
         }
 
         [Test]
         public static void TestKindergartenCreate()
         {
-            IWebDriver driver = new FirefoxDriver();
-            driver.Url = "https://localhost:7053/";
+            var driver = TestBase();
 
             //GroupName
             //ChildrenCount
@@ -36,7 +47,7 @@ namespace ShopTARge24KindergartenTesting
             idOfLinkElement.Click();
 
             // Create btn Index view
-            IWebElement idOfCreateButton = driver.FindElement(By.Id("createIndex"));
+            IWebElement idOfCreateButton = driver.FindElement(By.Id("kindergartenCreate"));
             idOfCreateButton.Click();
 
             // Group Name
@@ -74,8 +85,7 @@ namespace ShopTARge24KindergartenTesting
         [Test]
         public static void TestKindergartenUpdate()
         {
-            IWebDriver driver = new FirefoxDriver();
-            driver.Url = "https://localhost:7053/";
+            var driver = TestBase();
 
             //GroupName
             //ChildrenCount
@@ -133,8 +143,7 @@ namespace ShopTARge24KindergartenTesting
         [Test]
         public static void TestKindergartenDetails()
         {
-            IWebDriver driver = new FirefoxDriver();
-            driver.Url = "https://localhost:7053/";
+            var driver = TestBase();
 
             // Navigate to Index
             IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
@@ -146,7 +155,7 @@ namespace ShopTARge24KindergartenTesting
 
             // Back to Index btn
             Thread.Sleep(5000);
-            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndex"));
+            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndexDtls"));
             idOfBackButton.Click();
 
         }
@@ -154,8 +163,7 @@ namespace ShopTARge24KindergartenTesting
         [Test]
         public static void TestKindergartenDelete()
         {
-            IWebDriver driver = new FirefoxDriver();
-            driver.Url = "https://localhost:7053/";
+            var driver = TestBase();
 
             // Navigate to Index
             IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
@@ -171,6 +179,68 @@ namespace ShopTARge24KindergartenTesting
             idOfDeleteActionButton.Click();
 
         }
+
+        [Test]
+        public static void TestKindergartenBackToIndexCreate()
+        {
+            var driver = TestBase();
+
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+
+            // Cretae btn Index view
+            IWebElement idOfCreateButton = driver.FindElement(By.Id("kindergartenCreate"));
+            idOfCreateButton.Click();
+
+            // Back btn CreateUpdate view
+            Thread.Sleep(5000);
+            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndexCrtUpd"));
+            idOfBackButton.Click();
+
+        }
+
+        [Test]
+        public static void TestKindergartenBackToIndexUpdate()
+        {
+            var driver = TestBase();
+
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+
+            // Update btn Index view
+            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenUpdate"));
+            idOfDeleteButton.Click();
+
+            // Back btn CreateUpdate view
+            Thread.Sleep(5000);
+            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndexCrtUpd"));
+            idOfBackButton.Click();
+
+        }
+
+        [Test]
+        public static void TestKindergartenBackToIndexDelete()
+        {
+            var driver = TestBase();
+
+            // Navigate to Index
+            IWebElement idOfLinkElement = driver.FindElement(By.Id("kindergartenIndex"));
+            idOfLinkElement.Click();
+
+            // Delete btn Index view
+            IWebElement idOfDeleteButton = driver.FindElement(By.Id("kindergartenDelete"));
+            idOfDeleteButton.Click();
+
+            // Back btn Delete view
+            Thread.Sleep(5000);
+            IWebElement idOfBackButton = driver.FindElement(By.Id("backToIndexDlt"));
+            idOfBackButton.Click();
+
+        }
+
+
 
     }
 
